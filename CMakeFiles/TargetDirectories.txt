@@ -1,7 +1,0 @@
-/home/ganjx/sourcecode/DDSHelloWord/CMakeFiles/install/local.dir
-/home/ganjx/sourcecode/DDSHelloWord/CMakeFiles/install.dir
-/home/ganjx/sourcecode/DDSHelloWord/CMakeFiles/list_install_components.dir
-/home/ganjx/sourcecode/DDSHelloWord/CMakeFiles/rebuild_cache.dir
-/home/ganjx/sourcecode/DDSHelloWord/CMakeFiles/edit_cache.dir
-/home/ganjx/sourcecode/DDSHelloWord/CMakeFiles/install/strip.dir
-/home/ganjx/sourcecode/DDSHelloWord/CMakeFiles/DDSHelloWorld.dir

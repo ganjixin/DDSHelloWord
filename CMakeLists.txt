@@ -15,6 +15,8 @@ if(NOT fastrtps_FOUND)
 	#    find_package(fastrtps REQUIRED)
 endif()
 
+#add_subdirectory(ext/memory)
+
 # Set C++11
 include(CheckCXXCompilerFlag)
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG OR
@@ -33,13 +35,8 @@ file(GLOB DDS_HELLOWORD_SRC_CPP "src/*.cpp")
 
 SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
-include_directories(../Fast-DDS-2.6.0/install/include/)
-link_directories(../Fast-DDS-2.6.0/install/lib/ ../Fast-DDS-2.6.0/install/lib/lib)
-
-find_package(foonathan_memory major.minor REQUIRED)
-
-#SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) 
-#SET(CMAKE_INSTALL_RPATH "../Fast-DDS-2.6.0/install/lib/")
+include_directories(../Fast-DDS-2.6.0/install/include/ /home/ganjx/sourcecode/DDSHelloWord/ext/memory/build/install/include)
+link_directories(../Fast-DDS-2.6.0/install/lib/ /home/ganjx/sourcecode/DDSHelloWord/ext/memory/build/install/lib)
 
 add_executable(DDSHelloWorld ${DDS_HELLOWORD_SRC_CXX} ${DDS_HELLOWORD_SRC_CPP})
 target_compile_definitions(DDSHelloWorld PRIVATE
@@ -48,6 +45,6 @@ target_compile_definitions(DDSHelloWorld PRIVATE
 )
 
 #target_link_libraries(DDSHelloWorld fastrtps fastcdr foonathan_memory)
-target_link_libraries(DDSHelloWorld PUBLIC fastrtps fastcdr foonathan_memory)
+target_link_libraries(DDSHelloWorld fastrtps fastcdr foonathan_memory-0.7.1)
 install(TARGETS DDSHelloWorld
 	RUNTIME DESTINATION install)
